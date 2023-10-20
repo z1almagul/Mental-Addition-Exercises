@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mental Addition</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="syle.css"/>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div id="logo">
+                    <a href="https://z1almagul.github.io">
+                        <img id="logoimg" src="https://github.com/z1almagul/z1almagul.github.io/blob/main/assets/logo.png?raw=true" alt="logo" width="240" height="56">
+                    </a>
+                </div>
+            </div>
+            <div id="middlematter">
+                <div id="levels">
+                    <ul id="levelsList">
+                        <li id="buuton1">
+                            <button id="b1" name="levelButtons">Level 1</button>
+                        </li>
+                        <li id="buuton2">
+                            <button id="b2" name="levelButtons">Level 2</button>
+                        </li>
+                        <li id="buuton3">
+                            <button id="b3" name="levelButtons">Level 3</button>
+                        </li>
+                        <li id="buuton4">
+                            <button id="b4" name="levelButtons">Level 4</button>
+                        </li>
+                    </ul>
+                </div>
+                <div id="content">
+                    <div id="info">
+                        <ul id="infoList">
+                            <li><label id="time">Time: 0:0</label></li>
+                            <li id="total">Total: 0</li>
+                            <li id="correct">Correct: 0</li>
+                            <li id="wrong">Wrong: 0</li>
+                        </ul>
+                    </div>
+                    <div id="exercise">
+                        <ul id="exerciseList">
+                            <li><input id="userNumber" type="text" minlength="1" pattern="[0-9]"/></li>
+                            <li><label>+</label></li>
+                            <li><label id="randomNumber">8</label></li>
+                            <li><label>=</label></li>
+                            <li><label id="result">10</label></li>
+                        </ul>
+                    </div>
+                    <div id="imgdiv">
+                        <img id="correctimg" src="../images/correct.png" width="240" height="180" alt="character"/>
+                        <img id="wrongimg" src="../images/wrong.png" width="240" height="180" alt="character"/>
+                        <img id="askimg" src="../images/ask.png" width="240" height="180" alt="character"/>
+                    </div>
+                    <div id="buttonsdiv">
+                        <ul id="buttonsList" >
+                            <li><button id="checkButton" class="innerButton" accesskey="c" >Check</button></li>
+                            <li><button id="nextButton" class="innerButton" accesskey="n">Next</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div id="footerinner">
+                <p>Copyright © Brightelligent Softwares, 2023. All rights reserved.</p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
