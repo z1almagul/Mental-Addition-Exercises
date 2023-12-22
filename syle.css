@@ -195,11 +195,56 @@ input{
     }
 }
 
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 450px) {
     body {
         display: flex;
         flex-direction: column;
     }
+
+    #header{
+        padding: 0 5px;
+    }
+
+    #middle_matter {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    #content{
+        margin-top: 5%;
+    }
+
+    #levelsList{
+        margin-top: 0px;
+        flex-wrap: nowrap;
+    }
+
+    #levelsList button{
+        font-size: 0.9rem;
+        margin: 0;
+        padding: 5px;
+    }
+
+    #exerciseList{
+        flex-wrap: nowrap;
+    }
+
+    #userNumber{
+        width: 70%;
+    }
+
+    #wrongimg, #correctimg, #askimg{
+        width: 120px;
+        height: 90px;
+    }
+
+    #imgdiv{
+        height: 90px;
+    }
+
 }
 
 @media screen and (max-width: 960px){
