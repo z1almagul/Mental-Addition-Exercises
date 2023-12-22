@@ -54,39 +54,9 @@ button4.addEventListener('click', function(){
     start(lowerLimit, upperLimit);
 });
 
-checkButton.addEventListener('click', function(){
-    userNumber = Number.parseInt(document.getElementById('userNumber').value);
-    randomNumber = Number.parseInt(document.getElementById('randomNumber').textContent);
-    result = Number.parseInt(document.getElementById('result').textContent);
-    document.getElementById('askimg').style.display = 'none';
-    document.getElementById('wrongimg').style.display = 'none';
-    document.getElementById('correctimg').style.display = 'none';
-    if(userNumber + randomNumber === result){
-        correct++;
-        document.getElementById('correctimg').style.display = 'flex';
-    }else{
-        wrong++;
-        document.getElementById('wrongimg').style.display = 'flex';
-    }
-    total=wrong+correct;
-    document.getElementById('total').textContent = "Total: "+total;
-    document.getElementById('correct').textContent = "Correct: "+correct;
-    document.getElementById('wrong').textContent = "Wrong: "+wrong;
-    userNumber.value = 'none';
-    
-});
+checkButton.addEventListener('click', check);
 
-nextButton.addEventListener('click', function(){
-    let sum = getRandomIntInclusive(lowerLimit, upperLimit);
-    let random = getRandomIntInclusive(lowerLimit,sum);
-    document.getElementById('randomNumber').textContent = random;
-    document.getElementById('result').textContent = sum;
-    document.getElementById('userNumber').value = "";
-    document.getElementById('askimg').style.display = 'flex';
-    document.getElementById('wrongimg').style.display = 'none';
-    document.getElementById('correctimg').style.display = 'none';
-    setCharLimit();
-});
+nextButton.addEventListener('click', next);
 
 input2=document.getElementById('userNumber');
 input2.addEventListener('input', function(){
@@ -123,6 +93,17 @@ input2.addEventListener('input', function(){
     if(input2.value.length > input2.maxlength){
         input2.value = input2.value.substr(0, input2.maxlength);
     }
+});
+
+input2.addEventListener('keydown', function(e){
+    if(e.key === 'Enter')
+        if(keys.length === 0){
+            keys.push(e.key);
+            check();
+        }else {
+            keys.splice(0,1);
+            next();
+        }
 });
 
 function getRandomIntInclusive(min, max) {
@@ -162,5 +143,40 @@ function setCharLimit(){
     document.getElementById('userNumber').maxlength = digit;
     input = document.getElementById('userNumber');
 }
+
+function check(){
+    userNumber = Number.parseInt(document.getElementById('userNumber').value);
+    randomNumber = Number.parseInt(document.getElementById('randomNumber').textContent);
+    result = Number.parseInt(document.getElementById('result').textContent);
+    document.getElementById('askimg').style.display = 'none';
+    document.getElementById('wrongimg').style.display = 'none';
+    document.getElementById('correctimg').style.display = 'none';
+    if(userNumber + randomNumber === result){
+        correct++;
+        document.getElementById('correctimg').style.display = 'flex';
+    }else{
+        wrong++;
+        document.getElementById('wrongimg').style.display = 'flex';
+    }
+    total=wrong+correct;
+    document.getElementById('total').textContent = "Total: "+total;
+    document.getElementById('correct').textContent = "Correct: "+correct;
+    document.getElementById('wrong').textContent = "Wrong: "+wrong;
+    userNumber.value = 'none';
+    
+}
+
+function next(){
+    let sum = getRandomIntInclusive(lowerLimit, upperLimit);
+    let random = getRandomIntInclusive(lowerLimit,sum);
+    document.getElementById('randomNumber').textContent = random;
+    document.getElementById('result').textContent = sum;
+    document.getElementById('userNumber').value = "";
+    document.getElementById('askimg').style.display = 'flex';
+    document.getElementById('wrongimg').style.display = 'none';
+    document.getElementById('correctimg').style.display = 'none';
+    setCharLimit();
+}
+
 
 
