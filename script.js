@@ -21,6 +21,7 @@ var wrong = 0;
 let lastTime = 0;
 var gameTime = 0;
 var upperLimit, lowerLimit;
+let keys = [];
 
 button1.addEventListener('click', function(){
     upperLimit = 20;
