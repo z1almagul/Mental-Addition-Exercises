@@ -19,6 +19,7 @@ var total = 0;
 var correct = 0;
 var wrong = 0;
 var upperLimit, lowerLimit;
+let keys = [];
 
 button1.addEventListener('click', function(){
     upperLimit = 20;
